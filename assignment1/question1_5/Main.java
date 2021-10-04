@@ -2,10 +2,10 @@ package question1_5;
 
 public class Main {
     public static void main(String[] args) {
-        String example = "1A3d4s5t";
+        String example = "A2b2d4";
         String example2 = "A2bb2d4";
         if(checkString(example)) System.out.println("It's a correct string");
-        else System.out.println("It's a correct string");
+        else System.out.println("It's a wrong string");
 
         if(checkString(example2)) System.out.println("It's a correct string");
         else System.out.println("It's a wrong string");
@@ -21,12 +21,14 @@ public class Main {
             if(sign && isLetter(s.charAt(i))) return false;
             //pre char is digit
             if(!sign && !isLetter(s.charAt(i))) return false;
+
+            sign = !sign;
         }
         return true;
     }
 
     private static boolean isLetter(Character c) {
-        if((c > 'a' && c < 'z') || (c > 'A' && c < 'Z')) return true;
+        if((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) return true;
         else return false;
     }
 

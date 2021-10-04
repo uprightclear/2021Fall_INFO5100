@@ -11,17 +11,19 @@ public class Main {
     }
 
     private static boolean construct(String ransomNote, String magazine) {
-        if(ransomNote.length() > magazine.length()) return false;
-        Map<Character, Integer> map = new HashMap<>();
-        for(char c : magazine.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
+        int m = ransomNote.length();
+        int n = magazine.length();
+        int[] arr = new int[26];
+
+        if(m > n) return false;
+
+        for(int i = 0; i < n; i++){
+            arr[magazine.charAt(i) - 'a']++;
         }
 
-        for(char s : ransomNote.toCharArray()) {
-            if(map.get(s) == 0) return false;
-            map.put(s, map.get(s) - 1);
+        for(int i = 0; i < m; i++){
+            if(--arr[ransomNote.charAt(i) - 'a'] < 0) return false;
         }
-
         return true;
     }
 }
