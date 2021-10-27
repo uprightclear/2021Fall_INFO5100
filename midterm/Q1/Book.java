@@ -25,9 +25,6 @@ public abstract class Book {
         this.publishYear = publishYear;
     }
 
-    public void following() {
-
-    }
 
     public String getTitle() {
         return title;

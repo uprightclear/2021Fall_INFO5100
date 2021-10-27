@@ -44,6 +44,6 @@ public class Reference extends Book implements iBorrowable{
     @Override
     public boolean isAvailable(int day) {
         if(borrowDate <= day && day <= returnDate) return false;
-        return false;
+        return true;
     }
 }
