@@ -1,6 +1,6 @@
 package question5_1;
 
-public class BasicCar extends Car {
+public class BasicCar implements Car {
     public BasicCar() {
     }
 
