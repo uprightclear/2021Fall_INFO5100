@@ -40,7 +40,7 @@ public class Main {
     //GpaComparator: Student objects should be sorted in descending order by 'gpa' field of the object;
     public static int GpaComparator(Student a, Student b) {
         if(a.gpa > b.gpa) return -1;
-        else if (a.gpa > b.gpa) return 0;
+        else if (a.gpa == b.gpa) return 0;
         else return 1;
     }
 
